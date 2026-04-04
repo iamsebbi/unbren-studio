@@ -4,13 +4,41 @@ import StudioButton from "@/app/_shared/StudioButton";
 import StudioMarquee from "@/app/_shared/StudioMarquee";
 
 const SERVICES = [
-  { id: 1, label: "Branding and Identity", image: "/branding-identity.png" },
-  { id: 2, label: "Social Media Marketing", image: "/gradient1.jpg" },
-  { id: 3, label: "Web Design and Development", image: "/gradient.jpg" },
-  { id: 4, label: "SEO Optimization", image: "/gradient1.jpg" },
-  { id: 5, label: "UI/UX Strategy", image: "/gradient.jpg" },
-  { id: 6, label: "Content Engineering", image: "/gradient1.jpg" },
-  { id: 7, label: "Digital Growth Strategy", image: "/gradient.jpg" },
+  {
+    id: 1,
+    label: "Branding and Identity",
+    image: "/brand-identity-visual-systems.jpg",
+  },
+  {
+    id: 2,
+    label: "Social Media Marketing",
+    image: "/social-media-marketing.jpg",
+  },
+  {
+    id: 3,
+    label: "Web Design and Development",
+    image: "/web-design-development.jpg",
+  },
+  {
+    id: 4,
+    label: "SEO Optimization",
+    image: "/seo-optimization.jpg",
+  },
+  {
+    id: 5,
+    label: "UI/UX Strategy",
+    image: "/ux-ui-strategy.jpg",
+  },
+  {
+    id: 6,
+    label: "Content Engineering",
+    image: "/content-engineering.jpg",
+  },
+  {
+    id: 7,
+    label: "Digital Growth Strategy",
+    image: "/digital-growth-strategy.jpg",
+  },
 ];
 
 export default function HeroSection() {
@@ -40,7 +68,7 @@ export default function HeroSection() {
         <StudioAnimatedNoise opacity1={0.15} opacity2={0.08} className="z-10" />
 
         {/* Content Overlay Container */}
-        <div className="relative z-20 flex h-full w-full flex-col justify-between p-8 pt-24 md:p-12 md:pt-32 lg:p-16 lg:pt-36">
+        <div className="relative z-20 flex h-full w-full flex-col justify-between p-4 pt-24 md:p-12 md:pt-32 lg:p-16 lg:pt-36">
           {/* TOP: Branding */}
           <div className="flex flex-none flex-col items-start pt-4">
             <h1 className="font-clash text-left text-[clamp(65px,16vw,280px)] leading-[0.8] font-medium tracking-[-0.04em] text-(--color-studio-text)">
@@ -58,7 +86,7 @@ export default function HeroSection() {
           <div className="flex w-full flex-col justify-end gap-10 pb-12 md:flex-row md:items-end md:justify-between md:gap-16 md:pb-24 lg:pb-32">
             {/* Left Block: Info & CTAs */}
             <div className="flex flex-none flex-col items-start gap-8 md:max-w-md lg:max-w-lg xl:max-w-xl">
-              <p className="max-w-sm font-sans text-xl leading-snug font-medium text-(--color-studio-text) md:max-w-full md:text-2xl lg:text-3xl">
+              <p className="text-md max-w-sm font-sans leading-snug font-normal text-(--color-studio-text) md:max-w-full md:text-2xl lg:text-3xl">
                 La Unbren Studio, transformăm idei în experiențe digitale
                 premium — cu accent pe performanță, minimalism și inovație.
               </p>
@@ -86,7 +114,7 @@ export default function HeroSection() {
               <StudioMarquee
                 items={SERVICES}
                 speed="slow"
-                className="opacity-50"
+                className="opacity-80"
               />
             </div>
           </div>

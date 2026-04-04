@@ -53,9 +53,9 @@ const THEME = {
           "max-w-xl text-md font-normal leading-snug text-(--color-studio-text) md:text-xl",
         metadata: {
           label:
-            "mb-2 block text-[10px] font-bold  tracking-[0.1em] text-[var(--color-studio-muted)]",
-          chipset: "flex max-w-sm flex-wrap gap-2",
-          pill: "rounded-full border border-(--color-studio-border) bg-(--color-studio-surface) px-4 py-1.5 text-xs font-medium text-(--color-studio-text)",
+            "mb-2 block text-[11px] font-bold  tracking-[0.1em] text-[var(--color-studio-muted)]",
+          chipset: "flex max-w-sm flex-wrap gap-1",
+          pill: "rounded-full border border-(--color-studio-border) bg-(--color-studio-surface) px-4 py-1.5 text-xs font-normal text-(--color-studio-text)",
         },
       },
     },
@@ -74,13 +74,12 @@ export default function StudioServicesSection() {
 
   return (
     <section id="projects" className={THEME.section.container}>
-      <motion.div 
-        layout 
+      <motion.div
         className={cn("studio-theme isolate", THEME.section.card)}
         data-theme="dark"
       >
         {/* 1. Base Theme Background: Solid layer */}
-        <div className="bg-(--color-studio-bg) pointer-events-none absolute inset-0 z-0" />
+        <div className="pointer-events-none absolute inset-0 z-0 bg-(--color-studio-bg)" />
 
         {/* 2. Gradient Image Layer: Stationary background within the section */}
         <div className="pointer-events-none absolute top-0 left-0 z-0 h-750 w-full overflow-hidden opacity-80 mix-blend-normal">
@@ -90,59 +89,60 @@ export default function StudioServicesSection() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
         </div>
 
-          {/* 3. Cinematic Organic Noise: Clean overlay */}
-          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-            <StudioAnimatedNoise opacity1={0.12} opacity2={0.08} />
+        {/* 3. Cinematic Organic Noise: Clean overlay */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <StudioAnimatedNoise opacity1={0.12} opacity2={0.08} />
+        </div>
+
+        <div className="relative z-10">
+          <div className={THEME.section.content}>
+            {/* ── Section Header ───────────────────────────────────────────── */}
+            <header className={THEME.header.padding}>
+              <span className={THEME.header.tag}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5 fill-current"
+                >
+                  <path d="M4.929 4.929A10 10 0 1 1 19.07 19.07A10 10 0 0 1 4.93 4.93m8.071 4.071a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0-2h-2z" />
+                </svg>
+                Ce facem
+              </span>
+              <h2 className={THEME.header.title}>
+                Servicii.{" "}
+                <sup className={THEME.header.counter}>
+                  ({STUDIO_SERVICES.length})
+                </sup>
+              </h2>
+            </header>
+
+            {/* ── Accordion ─────────────────────────────────────────────── */}
+            <ul className={THEME.accordion.list}>
+              {STUDIO_SERVICES.map((service) => (
+                <AccordionItem
+                  key={service.id}
+                  service={service}
+                  isOpen={expandedId === service.id}
+                  onToggle={() => toggleItem(service.id)}
+                />
+              ))}
+            </ul>
+
+            {/* ── Section Footer ───────────────────────────────────────────── */}
+            <footer className={THEME.footer.base}>
+              <Link href="#contact">
+                <StudioButton className="mt-0 border-(--color-studio-bg) bg-(--color-studio-bg) px-12 text-(--color-studio-text) [--color-studio-bg:#fcfcf8] [--color-studio-surface:#09090b] [--color-studio-text:#09090b] hover:border-(--color-studio-bg) hover:bg-(--color-studio-text) hover:text-(--color-studio-text) hover:[--color-studio-surface:#fcfcf8] md:w-auto">
+                  Contactează-ne
+                </StudioButton>
+              </Link>
+            </footer>
           </div>
-
-          <div className="relative z-10">
-            <div className={THEME.section.content}>
-              {/* ── Section Header ───────────────────────────────────────────── */}
-              <header className={THEME.header.padding}>
-                <span className={THEME.header.tag}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5 fill-current"
-                  >
-                    <path d="M4.929 4.929A10 10 0 1 1 19.07 19.07A10 10 0 0 1 4.93 4.93m8.071 4.071a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0-2h-2z" />
-                  </svg>
-                  Ce facem
-                </span>
-                <h2 className={THEME.header.title}>
-                  Servicii.{" "}
-                  <sup className={THEME.header.counter}>
-                    ({STUDIO_SERVICES.length})
-                  </sup>
-                </h2>
-              </header>
-
-              {/* ── Accordion ─────────────────────────────────────────────── */}
-              <ul className={THEME.accordion.list}>
-                {STUDIO_SERVICES.map((service) => (
-                  <AccordionItem
-                    key={service.id}
-                    service={service}
-                    isOpen={expandedId === service.id}
-                    onToggle={() => toggleItem(service.id)}
-                  />
-                ))}
-              </ul>
-
-              {/* ── Section Footer ───────────────────────────────────────────── */}
-              <footer className={THEME.footer.base}>
-                <Link href="#contact">
-                  <StudioButton className="mt-0 border-(--color-studio-bg) bg-(--color-studio-bg) px-12 text-(--color-studio-text) [--color-studio-bg:#fcfcf8] [--color-studio-surface:#09090b] [--color-studio-text:#09090b] hover:border-(--color-studio-bg) hover:bg-(--color-studio-text) hover:text-(--color-studio-text) hover:[--color-studio-surface:#fcfcf8] md:w-auto">
-                    Contactează-ne
-                  </StudioButton>
-                </Link>
-              </footer>
-            </div>
-          </div>
-        </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -157,7 +157,7 @@ function AccordionItem({
   onToggle: () => void;
 }>) {
   return (
-    <motion.li layout className={THEME.accordion.item}>
+    <motion.li className={THEME.accordion.item}>
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
@@ -212,7 +212,7 @@ function AccordionItem({
               style={{ aspectRatio: "21 / 9" }}
             >
               <Image
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                src={service.image}
                 alt={service.title}
                 fill
                 className={THEME.accordion.content.media.image}

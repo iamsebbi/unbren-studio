@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: false,
   },
+  allowedDevOrigins: ["192.168.1.224"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [

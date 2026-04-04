@@ -14,7 +14,7 @@ const THEME = {
       "flex w-full flex-col items-center justify-center px-0 py-8 md:px-4 md:py-16",
     card: "relative w-full min-h-[650px] overflow-hidden rounded-none border-y border-(--color-studio-border) md:rounded-[24px] md:border md:bg-(--color-studio-surface)/20 md:shadow-2xl bg-(--color-studio-bg)",
     content:
-      "mx-auto flex w-full max-w-screen-2xl flex-col px-4 py-8 md:px-6 md:py-12",
+      "mx-auto flex w-full max-w-screen-2xl flex-col px-2 py-8 md:px-6 md:py-12",
   },
   header: {
     padding:
@@ -26,7 +26,7 @@ const THEME = {
   pricing: {
     toggle: {
       wrapper:
-        "mx-auto md:mx-0 flex items-center gap-1 rounded-full bg-(--color-studio-surface) p-1 w-fit mb-8",
+        "mx-auto  md:mx-0 flex items-center gap-1 rounded-full bg-(--color-studio-surface) p-1 w-fit mb-8",
       button:
         "relative px-8 py-2.5 text-sm font-medium transition-colors duration-300 rounded-full",
       activeBg: "absolute inset-0 bg-white rounded-full",
@@ -81,6 +81,7 @@ export default function StudioPricingSection() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
         </div>
 
@@ -201,7 +202,8 @@ export default function StudioPricingSection() {
                     Vrei un flux constant de clienți noi?
                   </h3>
                   <p className={THEME.pricing.addon.description}>
-                    Investește în vânzări, nu doar în trafic. SEO și Ads create pentru a converti vizitatorii în profit.
+                    Investește în vânzări, nu doar în trafic. SEO și Ads create
+                    pentru a converti vizitatorii în profit.
                   </p>
                 </div>
 

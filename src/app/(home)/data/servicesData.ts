@@ -14,7 +14,7 @@ export const STUDIO_SERVICES: ServiceItem[] = [
     title: "Identitate de Brand",
     description:
       "Creăm identități vizuale care rezonează și dăinuie. De la concept la manual de brand, construim fundația succesului tău.",
-    image: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    image: "/branding.jpg",
     categories: [
       "Identitate",
       "Strategie",
@@ -30,7 +30,7 @@ export const STUDIO_SERVICES: ServiceItem[] = [
     title: "Dezvoltare Web de Performanță",
     description:
       "Experiențe digitale imersive, optimizate pentru performanță și conversie. Imbinăm estetica de top cu funcționalitatea impecabilă.",
-    image: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    image: "/web-design.jpg",
     categories: [
       "UX/UI",
       "Next.js",
@@ -46,7 +46,7 @@ export const STUDIO_SERVICES: ServiceItem[] = [
     title: "Strategie Social Media",
     description:
       "Amplificăm prezența brandului tău în social media prin conținut creativ și strategii axate pe rezultate măsurabile.",
-    image: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    image: "/social-media.jpg",
     categories: [
       "Creare Conținut",
       "Ads",
@@ -62,7 +62,7 @@ export const STUDIO_SERVICES: ServiceItem[] = [
     title: "Producție Conținut Studio",
     description:
       "Povestim vizual prin fotografie și video de înaltă calitate. Capturăm esența brandului tău în fiecare cadru.",
-    image: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    image: "/content-production.jpg",
     categories: [
       "Fotografie",
       "Videografie",
