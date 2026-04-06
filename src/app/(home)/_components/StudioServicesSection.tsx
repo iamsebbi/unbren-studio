@@ -22,7 +22,7 @@ const THEME = {
   },
   header: {
     padding: "flex flex-col-reverse pb-8 md:flex-row md:items-start md:gap-12",
-    tag: "mt-2 flex items-center gap-1 text-sm font-normal tracking-widest text-[var(--color-studio-muted)] md:mt-4",
+    tag: "uppercase mt-2 flex items-center gap-1 text-sm font-medium tracking-normal text-[var(--color-studio-muted)] md:mt-4",
     title:
       "text-(--color-studio-text) text-[clamp(4rem,10vw,7rem)] font-studio font-medium leading-none tracking-tighter",
     counter:
@@ -34,9 +34,9 @@ const THEME = {
     trigger: {
       base: "group flex w-full cursor-pointer items-center justify-between py-4 transition-all duration-300 active:scale-95",
       number:
-        "font-studio font-semibold text-sm text-[var(--color-studio-muted)] transition-colors duration-300 group-hover:text-white",
+        "font-studio text-sm text-[var(--color-studio-muted)] transition-colors duration-300 group-hover:text-white",
       label:
-        "text-left text-lg font-medium tracking-tight leading-snug text-(--color-studio-text) md:text-2xl",
+        "text-left text-lg tracking-tight leading-snug text-(--color-studio-text) md:text-2xl",
       icon: "flex h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full border border-(--color-studio-border) text-(--color-studio-text) md:group-hover:scale-110 transition-all duration-300 ease-in-out",
     },
     content: {
@@ -168,14 +168,19 @@ function AccordionItem({
           <span
             className={cn(
               THEME.accordion.trigger.number,
-              isOpen && "text-(--color-studio-text)",
+              isOpen
+                ? "font-semibold text-(--color-studio-text)"
+                : "font-normal",
             )}
           >
             {service.number}
           </span>
           <span
             id={`service-title-${service.id}`}
-            className={THEME.accordion.trigger.label}
+            className={cn(
+              THEME.accordion.trigger.label,
+              isOpen ? "font-semibold" : "font-normal",
+            )}
           >
             {service.title}
           </span>

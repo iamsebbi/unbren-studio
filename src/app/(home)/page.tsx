@@ -1,6 +1,6 @@
 import HeroSection from "./_components/HeroSection";
 import StudioProjects from "./_components/StudioProjects";
-import TextRevealSection from "./_components/TextRevealSection";
+import ChatSection from "./_components/ChatSection";
 import StudioServicesSection from "./_components/StudioServicesSection";
 import StudioPricingSection from "./_components/StudioPricingSection";
 import StudioWhyUsBentoSection from "./_components/StudioWhyUsBentoSection";
@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div>
       <HeroSection />
-      <TextRevealSection />
+      <ChatSection />
       <StudioProjects />
       <StudioServicesSection />
       <StudioWhyUsBentoSection />

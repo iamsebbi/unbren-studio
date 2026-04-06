@@ -275,7 +275,7 @@ const BrandIdentityCard = () => (
           alt="UNBREN. STUDIO logo"
           width={144}
           height={48}
-          className="h-auto w-40 logo-theme md:w-48"
+          className="logo-theme h-auto w-40 md:w-48"
         />
       </div>
 
@@ -305,8 +305,8 @@ export default function StudioWhyUsBentoSection() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                width="14"
-                height="14"
+                width="18"
+                height="18"
                 className="fill-current"
                 aria-hidden="true"
               >
@@ -323,10 +323,9 @@ export default function StudioWhyUsBentoSection() {
             De ce să ne alegi pe noi
           </h2>
 
-          <p className="mt-3 max-w-4xl px-2 text-lg leading-snug font-medium text-(--color-studio-muted) md:text-lg">
+          <p className="text-md mt-3 max-w-4xl px-2 leading-snug font-medium text-(--color-studio-muted) md:text-lg">
             Eliminăm zgomotul vizual pentru a crea designuri gândite, atemporale
-            și de{" "}
-            <span className="text-(--color-studio-text)">impact.</span>
+            și de <span className="text-(--color-studio-text)">impact.</span>
           </p>
         </header>
 

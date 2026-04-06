@@ -24,8 +24,8 @@ const THEME = {
     descriptionContainer:
       "order-4 mt-2 max-w-97.5 lg:order-0 lg:col-span-3 lg:col-start-10 lg:row-start-1 lg:mt-0 lg:ml-auto lg:self-end",
     descriptionText:
-      "text-lg tracking-tight leading-snug text-(--color-studio-muted)",
-    year: "text-[var(--color-studio-text)] order-3 block text-3xl font-bold tracking-[-0.1em] md:text-5xl lg:order-0 lg:col-span-6 lg:col-start-3 lg:row-start-2 lg:mt-0",
+      "text-md tracking-tight leading-snug text-(--color-studio-muted)",
+    year: "font-studio text-[var(--color-studio-text)] order-3 block text-3xl font-semibold tracking-[0.01em] md:text-5xl lg:order-0 lg:col-span-6 lg:col-start-3 lg:row-start-2 lg:mt-0",
   },
   grid: {
     base: "mt-12 grid grid-cols-1 gap-x-2 gap-y-2 md:grid-cols-2",
@@ -73,28 +73,22 @@ const ProjectMorphIcon = ({ isHovered }: { isHovered: boolean }) => {
     >
       <motion.path
         animate={{
-          d: isHovered 
-            ? "M7 17 L15.8 8.2" 
-            : "M4 12 L4.01 12",
-          strokeWidth: isHovered ? 2.2 : 3.5 
+          d: isHovered ? "M7 17 L15.8 8.2" : "M4 12 L4.01 12",
+          strokeWidth: isHovered ? 2.2 : 3.5,
         }}
         transition={{ duration: 0.5, ease: [0.82, 0, 0.26, 1] }}
       />
       <motion.path
         animate={{
-          d: isHovered 
-            ? "M17 7 L7 7" 
-            : "M12 12 L12.01 12",
-          strokeWidth: isHovered ? 2.2 : 3.5
+          d: isHovered ? "M17 7 L7 7" : "M12 12 L12.01 12",
+          strokeWidth: isHovered ? 2.2 : 3.5,
         }}
         transition={{ duration: 0.5, ease: [0.82, 0, 0.26, 1] }}
       />
       <motion.path
         animate={{
-          d: isHovered 
-            ? "M17 7 L17 17" 
-            : "M20 12 L20.01 12",
-          strokeWidth: isHovered ? 2.2 : 3.5
+          d: isHovered ? "M17 7 L17 17" : "M20 12 L20.01 12",
+          strokeWidth: isHovered ? 2.2 : 3.5,
         }}
         transition={{ duration: 0.5, ease: [0.82, 0, 0.26, 1] }}
       />
@@ -113,7 +107,8 @@ export default function StudioProjects() {
 
           <div className={THEME.header.descriptionContainer}>
             <p className={THEME.header.descriptionText}>
-              Am ajutat afaceri din diverse industrii să își atingă obiectivele. Iată câteva dintre proiectele noastre recente.
+              Am ajutat afaceri din diverse industrii să își atingă obiectivele.
+              Iată câteva dintre proiectele noastre recente.
             </p>
           </div>
 
@@ -122,10 +117,7 @@ export default function StudioProjects() {
 
         <div className={THEME.grid.base}>
           {STUDIO_PROJECTS.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-            />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </div>
@@ -136,10 +128,10 @@ export default function StudioProjects() {
 function ProjectCard({ project }: { project: Project }) {
   const { title, year, imageSrc, slug } = project;
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
-    <Link 
-      href={`/proiecte/${slug}`} 
+    <Link
+      href={`/proiecte/${slug}`}
       className="group block"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -153,7 +145,9 @@ function ProjectCard({ project }: { project: Project }) {
           <div
             className={cn(
               THEME.card.menuButton,
-              isHovered ? "text-(--color-studio-text)" : "text-(--color-studio-muted)/70"
+              isHovered
+                ? "text-(--color-studio-text)"
+                : "text-(--color-studio-muted)/70",
             )}
           >
             <ProjectMorphIcon isHovered={isHovered} />
